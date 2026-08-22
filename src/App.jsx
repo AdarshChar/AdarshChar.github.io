@@ -1,6 +1,7 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import About from './components/About'
+import Experience from './components/Experience'
 import Portfolio from './components/Portfolio'
 import GithubRepos from './components/GithubRepos'
 import Research from './components/Research'
@@ -14,6 +15,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <Experience />
         <Portfolio />
         <GithubRepos />
         <Research />

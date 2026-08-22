@@ -725,56 +725,24 @@ section {
   box-shadow: 0 10px 24px -12px rgba(239, 100, 97, 0.6);
 }
 
-/* ---------------- Rotating tagline / glitch ---------------- */
+/* ---------------- Rotating tagline ---------------- */
 
 .rotator {
   display: inline-block;
   min-height: 1.4em;
 }
 
-.glitch {
-  position: relative;
+.rotator-role {
   display: inline-block;
-}
-
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  opacity: 0.8;
-}
-
-.glitch::before {
   color: var(--accent);
-  clip-path: inset(0 0 55% 0);
-  transform: translate(-3px, -1px);
-  animation: glitchTop 0.3s steps(3) 1;
-}
-
-.glitch::after {
-  color: var(--accent-2);
-  clip-path: inset(55% 0 0 0);
-  transform: translate(3px, 1px);
-  animation: glitchBottom 0.3s steps(3) 1;
-}
-
-@keyframes glitchTop {
-  0% { transform: translate(-6px, -2px); opacity: 1; }
-  60% { transform: translate(-2px, -1px); opacity: 0.5; }
-  100% { transform: translate(0, 0); opacity: 0; }
-}
-
-@keyframes glitchBottom {
-  0% { transform: translate(6px, 2px); opacity: 1; }
-  60% { transform: translate(2px, 1px); opacity: 0.5; }
-  100% { transform: translate(0, 0); opacity: 0; }
+  font-weight: 600;
 }
 
 /* ---------------- Experience ---------------- */
+
+.experience-section {
+  padding: 120px 0;
+}
 
 .experience-block {
   border: 1px solid var(--border);

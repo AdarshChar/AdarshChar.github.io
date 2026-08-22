@@ -1,18 +1,15 @@
 import { resume, profile } from '../data/content'
 import Reveal from './Reveal'
 import PdfViewer from './PdfViewer'
-import Experience from './Experience'
 
 export default function Resume() {
   return (
     <section id="resume" className="pdf-section alt-bg">
       <div className="container">
         <Reveal>
-          <span className="section-label">05 · Resume</span>
+          <span className="section-label">06 · Resume</span>
           <h2 className="section-title">Resume</h2>
         </Reveal>
-
-        <Experience />
 
         <Reveal delay={0.1}>
           <a className="pdf-download-btn" href={resume.pdfUrl} download>

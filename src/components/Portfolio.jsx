@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { portfolioCategories, portfolioItems } from '../data/content'
-import Reveal, { RevealGroup, revealItemVariants } from './Reveal'
+import Reveal from './Reveal'
 
 export default function Portfolio() {
   const [category, setCategory] = useState('All')
@@ -16,7 +16,7 @@ export default function Portfolio() {
     <section id="portfolio" className="portfolio">
       <div className="container">
         <Reveal>
-          <span className="section-label">02 · What I've built</span>
+          <span className="section-label">03 · What I've built</span>
           <h2 className="section-title">Portfolio</h2>
         </Reveal>
 
@@ -34,32 +34,37 @@ export default function Portfolio() {
           </div>
         </Reveal>
 
-        <RevealGroup className="portfolio-grid">
-          {filtered.map((item) => (
-            <motion.div
-              key={item.id}
-              variants={revealItemVariants}
-              className="portfolio-card"
-              onClick={() => setSelected(item)}
-              whileHover={{ scale: 1.03, y: -6 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 18 }}
-            >
-              <div className="portfolio-card-top">
-                <span className="portfolio-card-title">{item.title}</span>
-                <span className="portfolio-card-period">{item.period}</span>
-              </div>
-              <p className="portfolio-card-desc">{item.description}</p>
-              <div className="portfolio-card-tags">
-                {item.tags.map((tag) => (
-                  <span className="tag" key={tag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </RevealGroup>
+        <div className="portfolio-grid">
+          <AnimatePresence mode="popLayout">
+            {filtered.map((item) => (
+              <motion.div
+                key={item.id}
+                layout
+                className="portfolio-card"
+                onClick={() => setSelected(item)}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                whileHover={{ scale: 1.03, y: -6 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+              >
+                <div className="portfolio-card-top">
+                  <span className="portfolio-card-title">{item.title}</span>
+                  <span className="portfolio-card-period">{item.period}</span>
+                </div>
+                <p className="portfolio-card-desc">{item.description}</p>
+                <div className="portfolio-card-tags">
+                  {item.tags.map((tag) => (
+                    <span className="tag" key={tag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
       </div>
 
       <AnimatePresence>

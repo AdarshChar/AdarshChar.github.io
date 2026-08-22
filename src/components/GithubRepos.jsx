@@ -41,7 +41,7 @@ export default function GithubRepos() {
     <section id="github" className="github-section">
       <div className="container">
         <Reveal>
-          <span className="section-label">03 · Open source</span>
+          <span className="section-label">04 · Open source</span>
           <h2 className="section-title">GitHub</h2>
         </Reveal>
 

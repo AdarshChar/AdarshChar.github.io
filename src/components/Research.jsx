@@ -7,7 +7,7 @@ export default function Research() {
     <section id="research" className="pdf-section">
       <div className="container">
         <Reveal>
-          <span className="section-label">04 · Research</span>
+          <span className="section-label">05 · Research</span>
           <h2 className="section-title">Research Paper</h2>
         </Reveal>
 
