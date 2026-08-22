@@ -46,11 +46,14 @@ export default function GithubRepos() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <a
+          <motion.a
             className="github-profile-card"
             href={`https://github.com/${GITHUB_USERNAME}`}
             target="_blank"
             rel="noreferrer"
+            whileHover={{ scale: 1.015, y: -2 }}
+            whileTap={{ scale: 0.99 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
           >
             <img
               className="github-profile-avatar"
@@ -61,7 +64,7 @@ export default function GithubRepos() {
               <div>@{GITHUB_USERNAME}</div>
               <span>github.com/{GITHUB_USERNAME} →</span>
             </div>
-          </a>
+          </motion.a>
         </Reveal>
 
         {status === 'loading' && <p className="repo-status">Loading repositories…</p>}
@@ -90,6 +93,9 @@ export default function GithubRepos() {
                 href={repo.html_url}
                 target="_blank"
                 rel="noreferrer"
+                whileHover={{ scale: 1.045, y: -6 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 18 }}
               >
                 <span className="repo-card-name">{repo.name}</span>
                 <p className="repo-card-desc">{repo.description || 'No description yet.'}</p>

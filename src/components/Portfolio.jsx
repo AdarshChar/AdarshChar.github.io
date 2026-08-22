@@ -41,6 +41,9 @@ export default function Portfolio() {
               variants={revealItemVariants}
               className="portfolio-card"
               onClick={() => setSelected(item)}
+              whileHover={{ scale: 1.03, y: -6 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 18 }}
             >
               <div className="portfolio-card-top">
                 <span className="portfolio-card-title">{item.title}</span>

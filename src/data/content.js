@@ -1,36 +1,48 @@
 // ---------------------------------------------------------------------------
-// All placeholder content lives here. Replace the values below with your
-// real info — nothing else in src/ needs to change for a content update.
+// All real content lives here. Edit this file for text/link updates —
+// nothing else in src/ needs to change for a content update.
 // ---------------------------------------------------------------------------
 
 export const profile = {
-  name: 'Adarsh Char',
+  name: 'Adarsh Charugundla',
   initials: 'AC',
-  tagline: 'Software Engineer & Builder',
-  location: 'Placeholder, USA',
-  email: 'you@example.com',
+  roles: [
+    'DevOps Engineer',
+    'Cloud Architect',
+    'Software Developer',
+    'Computer Scientist',
+    'AI/ML Engineer',
+  ],
+  location: 'Colorado',
+  email: 'charugundla.adarsh@gmail.com',
   photo: null, // put a file at public/profile.jpg and set this to '/profile.jpg'
 }
 
 export const socialLinks = [
   { label: 'GitHub', url: 'https://github.com/AdarshChar', icon: 'github' },
-  { label: 'LinkedIn', url: 'https://linkedin.com/in/PLACEHOLDER', icon: 'linkedin' },
-  { label: 'Email', url: 'mailto:you@example.com', icon: 'mail' },
-  { label: 'X', url: 'https://x.com/PLACEHOLDER', icon: 'x' },
+  {
+    label: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/adarsh-charugundla-76855924a/',
+    icon: 'linkedin',
+  },
+  { label: 'Email', url: 'mailto:charugundla.adarsh@gmail.com', icon: 'mail' },
 ]
 
 export const about = {
   title: 'About Me',
   shortBio:
-    'Placeholder short bio — one or two sentences that summarize who you are and what you do.',
+    'CS @ CU Boulder | Building with AI & VR | Seeking SWE / DevOps / Cloud roles | Python · AWS · Kubernetes',
   longBio: [
-    'Placeholder paragraph one of your longer about-me section. Talk about your background, what got you into software/research, and what drives you.',
-    'Placeholder paragraph two. Talk about your current focus, interests, or what you are looking for next (roles, collaborations, etc.).',
+    'Computer Science & Engineering student at CU Boulder (Business minor), working in cloud infrastructure and DevOps.',
+    'I build secure, multi-environment AWS with Terraform, run containerized workloads on Docker, ECR, and Kubernetes, and automate build, test, and release with GitHub Actions. Recent work includes an IAM least-privilege enforcement system that reduced overpermissioned roles from 4 to 0, and infrastructure spanning three isolated AWS environments.',
+    'Focused on security automation, least-privilege IAM, and deployments.',
+    'Open to DevOps, Cloud, and SRE roles.',
+    'Interests: guitar, bass, drums, piano, music production, music engineering/mastering.',
   ],
   personalInfo: [
-    { label: 'Location', value: 'Placeholder, USA' },
-    { label: 'Email', value: 'you@example.com' },
-    { label: 'Education', value: 'Placeholder University' },
+    { label: 'Location', value: 'Colorado' },
+    { label: 'Email', value: 'charugundla.adarsh@gmail.com' },
+    { label: 'Education', value: 'University of Colorado Boulder' },
   ],
 }
 
@@ -40,40 +52,58 @@ export const portfolioCategories = ['All', 'Experience', 'Projects']
 
 export const portfolioItems = [
   {
-    id: 'placeholder-exp-1',
+    id: 'skyit-devops-intern',
     category: 'Experience',
-    title: 'Placeholder Role — Company Name',
-    period: '20XX — Present',
-    description: 'Placeholder description of what you did in this role and its impact.',
-    tags: ['Placeholder', 'Tag'],
-    link: null,
+    title: 'DevOps Engineer (Intern) — SkyIT (GBCS Group)',
+    period: 'Dec 2025 — Apr 2026',
+    description:
+      'Provisioned secure multi-environment AWS infrastructure with Terraform, containerized services with Docker/ECR, orchestrated Kubernetes workloads, and built GitHub Actions CI/CD pipelines.',
+    tags: ['Terraform', 'AWS', 'Kubernetes', 'Docker', 'OIDC', 'CI/CD'],
+    link: 'https://skyit.services',
   },
   {
-    id: 'placeholder-proj-1',
+    id: 'iam-least-privilege-audit',
     category: 'Projects',
-    title: 'Placeholder Project One',
-    period: '20XX',
-    description: 'Placeholder description of the project, the problem it solves, and tech used.',
-    tags: ['React', 'Node'],
-    link: 'https://github.com/AdarshChar',
+    title: 'FrazyCorp IAM Least-Privilege Enforcement',
+    period: '',
+    description:
+      'Terraform-managed IAM enforcement system for a simulated multi-department AWS environment, reducing overpermissioned roles from 4 to 0. Automated compliance auditing with AWS Config and IAM Access Analyzer, plus a GitHub Actions OIDC security gate blocking overpermissive policies before they reach AWS.',
+    tags: ['Terraform', 'AWS IAM', 'AWS Config', 'GitHub Actions', 'Python', 'boto3'],
+    link: 'https://github.com/AdarshChar/iam-least-privilege-audit',
   },
   {
-    id: 'placeholder-proj-2',
+    id: 'gtsdb-roadsign-classifier',
     category: 'Projects',
-    title: 'Placeholder Project Two',
-    period: '20XX',
-    description: 'Another placeholder project description — swap in your real work here.',
-    tags: ['Python', 'ML'],
-    link: 'https://github.com/AdarshChar',
+    title: 'Traffic Sign Detection System',
+    period: '',
+    description:
+      'Trained YOLOv8n on the GTSDB dataset (43 classes), improving recall by 31.3% via a custom photometric augmentation pipeline. Built a preprocessing pipeline converting PPM annotations to YOLO format across 852 ground-truth entries.',
+    tags: ['Python', 'YOLOv8', 'OpenCV', 'Roboflow', 'NumPy'],
+    link: 'https://github.com/AdarshChar/GTSDB-Roadsign-Classifier',
   },
 ]
 
+export const experience = {
+  role: 'DevOps Engineer (Intern)',
+  company: 'SkyIT (GBCS Group)',
+  companyUrl: 'https://skyit.services',
+  period: 'Dec 2025 — Apr 2026',
+  stack: 'Terraform, AWS (VPC, RDS, ECR), Kubernetes, Docker, OIDC, CI/CD',
+  bullets: [
+    'Provisioned secure AWS infrastructure across three isolated environments (LokoMotive, Aukai, Orion) using Terraform IaC, designing custom VPC topologies with CIDR-level network segmentation.',
+    'Automated RDS deployments via reusable Terraform modules, authoring tfvars configurations and smoke-testing procedures that standardized provisioning, ensured high-availability storage, and reduced manual configuration errors.',
+    'Containerized frontend and backend services with Docker, building, tagging, and managing images through secure ECR pipelines for consistent deployments across all environments.',
+    'Built GitHub Actions CI/CD pipelines to automate build, test, and release stages, reducing manual intervention and ensuring stable, repeatable releases across all environments.',
+    'Orchestrated containerized workloads on Kubernetes across development and production, deploying via Docker images and ECR pipelines while managing pod scheduling, autoscaling, and service networking for reliable releases.',
+  ],
+}
+
 export const research = {
-  title: 'Placeholder Research Paper Title',
-  authors: 'Adarsh Char, et al.',
-  venue: 'Placeholder Conference/Journal, 20XX',
+  title: 'Traffic Sign Detection Using YOLOv8',
+  authors: 'Adarsh Charugundla',
+  venue: 'Impact of Data Augmentation on GTSDB Detection Performance',
   summary:
-    'Placeholder one-paragraph summary of the research paper — what problem it addresses and what the contribution is.',
+    'Investigates the effect of image-based data augmentation (blur, brightness variation, additive noise) on a YOLOv8s model trained for traffic sign recognition on the German Traffic Sign Detection Benchmark (GTSDB). The augmented model improved mAP50 from 0.610 to 0.650 and recall by 31.3% (0.501 → 0.658) over the baseline, with no architecture changes.',
   pdfUrl: '/research-paper.pdf', // put your PDF at public/research-paper.pdf
 }
 

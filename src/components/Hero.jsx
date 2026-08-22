@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { profile, socialLinks } from '../data/content'
 import Icon from './Icons'
+import RotatingTagline from './RotatingTagline'
 
 export default function Hero() {
   return (
@@ -29,7 +30,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25 }}
         >
-          {profile.tagline}
+          <RotatingTagline roles={profile.roles} />
         </motion.p>
         <motion.div
           className="hero-socials"

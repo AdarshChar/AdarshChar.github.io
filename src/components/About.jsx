@@ -37,7 +37,7 @@ export default function About() {
 
           <Reveal delay={0.2}>
             <div>
-              <h3 className="about-body-title">{profile.tagline}</h3>
+              <h3 className="about-body-title">{profile.name}</h3>
               <p className="about-short-bio">{about.shortBio}</p>
 
               <div className="about-socials">
