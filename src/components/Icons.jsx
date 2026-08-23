@@ -1,4 +1,4 @@
-// Minimal inline icon set so the site has zero icon-font/image dependencies.
+// Inline icon set: no icon-font or image dependency.
 
 const icons = {
   github: (
@@ -13,6 +13,7 @@ const icons = {
   x: (
     <path d="M18.9 1.65h3.68l-8.04 9.19 9.46 12.51h-7.41l-5.8-7.59-6.64 7.59H.47l8.6-9.83L0 1.65h7.59l5.25 6.94 6.06-6.94Zm-1.29 19.5h2.04L6.5 3.75H4.31L17.61 21.15Z" />
   ),
+  chevron: <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />,
 }
 
 export default function Icon({ name, size = 20 }) {

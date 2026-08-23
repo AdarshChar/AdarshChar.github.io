@@ -11,9 +11,7 @@ const SECTIONS = [
   { id: 'resume', label: 'Resume' },
 ]
 
-// Hoisted so this array has a stable reference across renders — passing a
-// fresh array to useActiveSection every render would tear down and rebuild
-// its IntersectionObserver on every render, which can drop updates.
+// Stable reference: a new array each render rebuilds the IntersectionObserver constantly.
 const SECTION_IDS = SECTIONS.map((s) => s.id)
 
 export default function Nav() {

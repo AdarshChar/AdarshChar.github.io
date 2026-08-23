@@ -192,28 +192,18 @@ section {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(239, 100, 97, 0.16), transparent 45%),
-    radial-gradient(circle at 80% 30%, rgba(193, 102, 107, 0.16), transparent 45%),
-    radial-gradient(circle at 50% 80%, rgba(239, 100, 97, 0.09), transparent 50%),
-    var(--bg);
-  background-size: 200% 200%;
-  animation: heroDrift 18s ease-in-out infinite;
+  background-color: var(--bg);
+  background-image: url('/Untitled-dfw1.jpg');
+  background-size: cover;
+  background-position: center 65%;
 }
 
 .hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(230, 237, 245, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(230, 237, 245, 0.03) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: radial-gradient(circle at 50% 40%, black, transparent 75%);
-}
-
-@keyframes heroDrift {
-  0%, 100% { background-position: 0% 0%; }
-  50% { background-position: 100% 100%; }
+  background: var(--bg);
+  opacity: 0.55;
 }
 
 .hero-content {
@@ -264,7 +254,6 @@ section {
   color: var(--accent);
   border-color: var(--accent);
   background: var(--accent-soft);
-  transform: translateY(-3px) scale(1.08);
 }
 
 .scroll-cue {
@@ -284,7 +273,7 @@ section {
 .scroll-cue-line {
   width: 1px;
   height: 32px;
-  background: linear-gradient(var(--accent), transparent);
+  background: var(--accent);
   animation: scrollPulse 1.8s ease-in-out infinite;
 }
 
@@ -327,24 +316,14 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--surface), var(--bg-alt));
+  background: var(--surface);
   box-shadow: 0 0 0 8px var(--accent-soft);
-  transition: box-shadow 0.3s ease;
-}
-
-.about-photo-wrap:hover .about-photo {
-  box-shadow: 0 0 0 10px var(--accent-soft);
 }
 
 .about-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.about-photo-wrap:hover .about-photo img {
-  transform: scale(1.08);
 }
 
 .about-photo-initials {
@@ -438,7 +417,6 @@ section {
 .filter-btn:hover {
   color: var(--text);
   border-color: var(--accent);
-  transform: scale(1.05);
 }
 
 .filter-btn.active {
@@ -468,7 +446,6 @@ section {
 .portfolio-card:hover {
   border-color: var(--accent);
   background: var(--surface-hover);
-  box-shadow: 0 16px 34px -18px rgba(239, 100, 97, 0.45);
 }
 
 .portfolio-card-top {
@@ -571,12 +548,11 @@ section {
   padding: 20px 24px;
   background: var(--surface);
   margin-bottom: 32px;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.25s ease;
 }
 
 .github-profile-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 12px 28px -16px rgba(239, 100, 97, 0.4);
 }
 
 .github-profile-avatar {
@@ -610,8 +586,6 @@ section {
 
 .repo-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 18px 36px -18px rgba(239, 100, 97, 0.5);
-  z-index: 1;
 }
 
 .repo-card-name {
@@ -706,23 +680,105 @@ section {
   padding: 24px;
 }
 
-.pdf-download-btn {
-  display: inline-block;
-  margin-top: 20px;
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  padding: 10px 22px;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  border-radius: 999px;
-  transition: all 0.2s ease;
+/* ---------------- Resume blocks ---------------- */
+
+.resume-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.pdf-download-btn:hover {
-  background: var(--accent);
-  color: var(--bg);
-  transform: scale(1.05);
-  box-shadow: 0 10px 24px -12px rgba(239, 100, 97, 0.6);
+.resume-block {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  overflow: hidden;
+  transition: border-color 0.25s ease;
+}
+
+.resume-block:hover {
+  border-color: var(--accent);
+}
+
+.resume-block-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  text-align: left;
+}
+
+.resume-block-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  display: block;
+}
+
+.resume-block-subtitle {
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 4px;
+}
+
+.resume-block-chevron {
+  flex-shrink: 0;
+  color: var(--accent);
+  display: flex;
+  transition: transform 0.25s ease;
+}
+
+.resume-block-chevron.open {
+  transform: rotate(180deg);
+}
+
+.resume-block-body {
+  padding: 0 24px 24px;
+}
+
+.resume-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resume-project {
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.resume-project:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.skills-category-label {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 0.78rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.education-line {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  margin-bottom: 6px;
 }
 
 /* ---------------- Rotating tagline ---------------- */
@@ -750,12 +806,6 @@ section {
   background: var(--surface);
   padding: 28px 32px;
   margin-bottom: 40px;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.experience-block:hover {
-  border-color: var(--accent);
-  box-shadow: 0 16px 34px -20px rgba(239, 100, 97, 0.45);
 }
 
 .experience-header {

@@ -7,37 +7,18 @@ export default function Hero() {
   return (
     <section id="home" className="hero">
       <div className="hero-bg" />
-      <div className="container hero-content">
-        <motion.p
-          className="hero-eyebrow"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          Hi, I'm
-        </motion.p>
-        <motion.h1
-          className="hero-name"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-        >
-          {profile.name}
-        </motion.h1>
-        <motion.p
-          className="hero-tagline"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-        >
+      <motion.div
+        className="container hero-content"
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <p className="hero-eyebrow">Hi, I'm</p>
+        <h1 className="hero-name">{profile.name}</h1>
+        <p className="hero-tagline">
           <RotatingTagline roles={profile.roles} />
-        </motion.p>
-        <motion.div
-          className="hero-socials"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-        >
+        </p>
+        <div className="hero-socials">
           {socialLinks.map((link) => (
             <a
               key={link.label}
@@ -50,8 +31,8 @@ export default function Hero() {
               <Icon name={link.icon} />
             </a>
           ))}
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
       <div className="scroll-cue">
         <span>SCROLL</span>
         <div className="scroll-cue-line" />

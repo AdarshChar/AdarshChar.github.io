@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
-// Cycles through a list of role titles with a simple crossfade.
+// Crossfades between role titles on an interval.
 export default function RotatingTagline({ roles, interval = 2200 }) {
   const [index, setIndex] = useState(0)
 

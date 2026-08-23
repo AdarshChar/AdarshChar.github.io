@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 
-// Tracks which section id is currently most visible in the viewport, so the
-// nav can highlight the right link as the user scrolls.
+// Tracks the most visible section id for nav highlighting.
 export default function useActiveSection(ids) {
   const [active, setActive] = useState(ids[0])
 

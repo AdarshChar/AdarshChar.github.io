@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { portfolioCategories, portfolioItems } from '../data/content'
-import Reveal from './Reveal'
 
 export default function Portfolio() {
   const [category, setCategory] = useState('All')
@@ -15,39 +14,32 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="portfolio">
       <div className="container">
-        <Reveal>
-          <span className="section-label">03 · What I've built</span>
-          <h2 className="section-title">Portfolio</h2>
-        </Reveal>
+        <span className="section-label">03 · What I've built</span>
+        <h2 className="section-title">Portfolio</h2>
 
-        <Reveal delay={0.1}>
-          <div className="portfolio-filters">
-            {portfolioCategories.map((cat) => (
-              <button
-                key={cat}
-                className={`filter-btn ${category === cat ? 'active' : ''}`}
-                onClick={() => setCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </Reveal>
+        <div className="portfolio-filters">
+          {portfolioCategories.map((cat) => (
+            <button
+              key={cat}
+              className={`filter-btn ${category === cat ? 'active' : ''}`}
+              onClick={() => setCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
         <div className="portfolio-grid">
-          <AnimatePresence mode="popLayout">
+          <AnimatePresence>
             {filtered.map((item) => (
               <motion.div
                 key={item.id}
-                layout
                 className="portfolio-card"
                 onClick={() => setSelected(item)}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                whileHover={{ scale: 1.03, y: -6 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15 }}
               >
                 <div className="portfolio-card-top">
                   <span className="portfolio-card-title">{item.title}</span>
@@ -74,16 +66,10 @@ export default function Portfolio() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
             onClick={() => setSelected(null)}
           >
-            <motion.div
-              className="modal"
-              initial={{ opacity: 0, scale: 0.94, y: 12 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.94, y: 12 }}
-              transition={{ duration: 0.25 }}
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div className="modal" onClick={(e) => e.stopPropagation()}>
               <button className="modal-close" onClick={() => setSelected(null)}>
                 ×
               </button>
@@ -110,7 +96,7 @@ export default function Portfolio() {
                   View more →
                 </a>
               )}
-            </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -1,7 +1,4 @@
-// ---------------------------------------------------------------------------
-// All real content lives here. Edit this file for text/link updates —
-// nothing else in src/ needs to change for a content update.
-// ---------------------------------------------------------------------------
+// Single source of truth for site content. Nothing else in src/ needs to change here.
 
 export const profile = {
   name: 'Adarsh Charugundla',
@@ -15,7 +12,7 @@ export const profile = {
   ],
   location: 'Colorado',
   email: 'charugundla.adarsh@gmail.com',
-  photo: null, // put a file at public/profile.jpg and set this to '/profile.jpg'
+  photo: '/profile.jpg',
 }
 
 export const socialLinks = [
@@ -54,8 +51,8 @@ export const portfolioItems = [
   {
     id: 'skyit-devops-intern',
     category: 'Experience',
-    title: 'DevOps Engineer (Intern) — SkyIT (GBCS Group)',
-    period: 'Dec 2025 — Apr 2026',
+    title: 'DevOps Engineer (Intern): SkyIT (GBCS Group)',
+    period: 'Dec 2025 - Apr 2026',
     description:
       'Provisioned secure multi-environment AWS infrastructure with Terraform, containerized services with Docker/ECR, orchestrated Kubernetes workloads, and built GitHub Actions CI/CD pipelines.',
     tags: ['Terraform', 'AWS', 'Kubernetes', 'Docker', 'OIDC', 'CI/CD'],
@@ -87,7 +84,7 @@ export const experience = {
   role: 'DevOps Engineer (Intern)',
   company: 'SkyIT (GBCS Group)',
   companyUrl: 'https://skyit.services',
-  period: 'Dec 2025 — Apr 2026',
+  period: 'Dec 2025 - Apr 2026',
   stack: 'Terraform, AWS (VPC, RDS, ECR), Kubernetes, Docker, OIDC, CI/CD',
   bullets: [
     'Provisioned secure AWS infrastructure across three isolated environments (LokoMotive, Aukai, Orion) using Terraform IaC, designing custom VPC topologies with CIDR-level network segmentation.',
@@ -98,6 +95,41 @@ export const experience = {
   ],
 }
 
+export const education = {
+  school: 'University of Colorado Boulder',
+  degree: 'B.A. in Computer Science & Engineering',
+  minor: 'Minor in Business',
+  gpa: 'Cumulative GPA: 3.6',
+  period: 'May 2026',
+}
+
+export const technicalSkills = [
+  {
+    category: 'Languages',
+    items: ['Python', 'JavaScript (ES6+)', 'TypeScript', 'C/C++', 'SQL', 'Bash', 'HTML/CSS'],
+  },
+  {
+    category: 'Frameworks & Libraries',
+    items: ['React', 'Node.js', 'Express.js', 'boto3'],
+  },
+  {
+    category: 'Cloud & DevOps',
+    items: ['AWS', 'Terraform', 'Kubernetes', 'Docker', 'ECR', 'CI/CD', 'OIDC'],
+  },
+  {
+    category: 'Security & Compliance',
+    items: ['IAM Least Privilege', 'AWS Config', 'Access Analyzer', 'Checkov', 'Static Analysis'],
+  },
+  {
+    category: 'AI & Data',
+    items: ['YOLOv8', 'OpenCV', 'Roboflow', 'NumPy'],
+  },
+  {
+    category: 'Databases & Tools',
+    items: ['PostgreSQL', 'MySQL', 'Microsoft SQL Server', 'Oracle', 'Git', 'Vim', 'Jest', 'JUnit'],
+  },
+]
+
 export const research = {
   title: 'Traffic Sign Detection Using YOLOv8',
   authors: 'Adarsh Charugundla',
@@ -107,6 +139,3 @@ export const research = {
   pdfUrl: '/research-paper.pdf', // put your PDF at public/research-paper.pdf
 }
 
-export const resume = {
-  pdfUrl: '/resume.pdf', // put your PDF at public/resume.pdf
-}

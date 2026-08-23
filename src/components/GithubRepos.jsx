@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
 import { GITHUB_USERNAME } from '../data/content'
-import Reveal, { RevealGroup, revealItemVariants } from './Reveal'
 
 export default function GithubRepos() {
   const [repos, setRepos] = useState([])
@@ -40,37 +38,30 @@ export default function GithubRepos() {
   return (
     <section id="github" className="github-section">
       <div className="container">
-        <Reveal>
-          <span className="section-label">04 · Open source</span>
-          <h2 className="section-title">GitHub</h2>
-        </Reveal>
+        <span className="section-label">04 · Open source</span>
+        <h2 className="section-title">GitHub</h2>
 
-        <Reveal delay={0.1}>
-          <motion.a
-            className="github-profile-card"
-            href={`https://github.com/${GITHUB_USERNAME}`}
-            target="_blank"
-            rel="noreferrer"
-            whileHover={{ scale: 1.015, y: -2 }}
-            whileTap={{ scale: 0.99 }}
-            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-          >
-            <img
-              className="github-profile-avatar"
-              src={profile?.avatar_url ?? `https://github.com/${GITHUB_USERNAME}.png`}
-              alt={GITHUB_USERNAME}
-            />
-            <div className="github-profile-meta">
-              <div>@{GITHUB_USERNAME}</div>
-              <span>github.com/{GITHUB_USERNAME} →</span>
-            </div>
-          </motion.a>
-        </Reveal>
+        <a
+          className="github-profile-card"
+          href={`https://github.com/${GITHUB_USERNAME}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            className="github-profile-avatar"
+            src={profile?.avatar_url ?? `https://github.com/${GITHUB_USERNAME}.png`}
+            alt={GITHUB_USERNAME}
+          />
+          <div className="github-profile-meta">
+            <div>@{GITHUB_USERNAME}</div>
+            <span>github.com/{GITHUB_USERNAME} →</span>
+          </div>
+        </a>
 
         {status === 'loading' && <p className="repo-status">Loading repositories…</p>}
         {status === 'error' && (
           <p className="repo-status">
-            Couldn't load repos right now — visit{' '}
+            Couldn't load repos right now: visit{' '}
             <a
               href={`https://github.com/${GITHUB_USERNAME}`}
               target="_blank"
@@ -84,18 +75,14 @@ export default function GithubRepos() {
         )}
 
         {status === 'ok' && (
-          <RevealGroup className="repo-grid">
+          <div className="repo-grid">
             {repos.map((repo) => (
-              <motion.a
+              <a
                 key={repo.id}
-                variants={revealItemVariants}
                 className="repo-card"
                 href={repo.html_url}
                 target="_blank"
                 rel="noreferrer"
-                whileHover={{ scale: 1.045, y: -6 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 18 }}
               >
                 <span className="repo-card-name">{repo.name}</span>
                 <p className="repo-card-desc">{repo.description || 'No description yet.'}</p>
@@ -103,9 +90,9 @@ export default function GithubRepos() {
                   {repo.language && <span>{repo.language}</span>}
                   <span>★ {repo.stargazers_count}</span>
                 </div>
-              </motion.a>
+              </a>
             ))}
-          </RevealGroup>
+          </div>
         )}
       </div>
     </section>
