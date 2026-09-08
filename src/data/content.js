@@ -10,8 +10,8 @@ export const profile = {
     'Computer Scientist',
     'AI/ML Engineer',
   ],
-  location: 'Colorado',
-  email: 'charugundla.adarsh@gmail.com',
+  location: 'Boulder, Colorado',
+  email: 'livingglitch321@gmail.com',
   photo: '/profile.jpg',
 }
 
@@ -22,7 +22,7 @@ export const socialLinks = [
     url: 'https://www.linkedin.com/in/adarsh-charugundla-76855924a/',
     icon: 'linkedin',
   },
-  { label: 'Email', url: 'mailto:charugundla.adarsh@gmail.com', icon: 'mail' },
+  { label: 'Email', url: 'mailto:livingglitch321@gmail.com', icon: 'mail' },
 ]
 
 export const about = {
@@ -37,8 +37,8 @@ export const about = {
     'Interests: guitar, bass, drums, piano, music production, music engineering/mastering.',
   ],
   personalInfo: [
-    { label: 'Location', value: 'Colorado' },
-    { label: 'Email', value: 'charugundla.adarsh@gmail.com' },
+    { label: 'Location', value: 'Boulder, Colorado' },
+    { label: 'Email', value: 'livingglitch321@gmail.com' },
     { label: 'Education', value: 'University of Colorado Boulder' },
   ],
 }
@@ -51,47 +51,50 @@ export const portfolioItems = [
   {
     id: 'skyit-devops-intern',
     category: 'Experience',
-    title: 'DevOps Engineer (Intern): SkyIT (GBCS Group)',
-    period: 'Dec 2025 - Apr 2026',
+    title: 'DevOps Team Lead (Intern): SkyIT',
+    period: 'Current',
     description:
-      'Provisioned secure multi-environment AWS infrastructure with Terraform, containerized services with Docker/ECR, orchestrated Kubernetes workloads, and built GitHub Actions CI/CD pipelines.',
-    tags: ['Terraform', 'AWS', 'Kubernetes', 'Docker', 'OIDC', 'CI/CD'],
+      'Led deployment of secure, scalable AWS infrastructure as DevOps Team Lead. Directed Terraform IaC initiatives across three isolated VPC environments (LokoMotive, Aukai, Orion), automated RDS provisioning, and containerized full-stack apps via Docker/ECR.',
+    tags: ['Terraform', 'AWS', 'OIDC', 'CI/CD', 'Docker', 'ECR'],
     link: 'https://skyit.services',
   },
   {
-    id: 'iam-least-privilege-audit',
+    id: 'nodejs-postgresql-api',
     category: 'Projects',
-    title: 'FrazyCorp IAM Least-Privilege Enforcement',
+    title: 'NodeJS PostgreSQL API',
     period: '',
     description:
-      'Terraform-managed IAM enforcement system for a simulated multi-department AWS environment, reducing overpermissioned roles from 4 to 0. Automated compliance auditing with AWS Config and IAM Access Analyzer, plus a GitHub Actions OIDC security gate blocking overpermissive policies before they reach AWS.',
-    tags: ['Terraform', 'AWS IAM', 'AWS Config', 'GitHub Actions', 'Python', 'boto3'],
-    link: 'https://github.com/AdarshChar/iam-least-privilege-audit',
+      'Built a RESTful API with Node.js and Express.js backed by PostgreSQL, implementing full CRUD across multiple endpoints with proper HTTP methods, status codes, and error handling. Applied SQL query optimization, connection pooling, and MVC architecture with custom middleware.',
+    tags: ['Node.js', 'Express.js', 'PostgreSQL', 'Docker', 'REST API'],
+    link: 'https://github.com/AdarshChar/NodeJS',
   },
   {
-    id: 'gtsdb-roadsign-classifier',
+    id: 'road-sign-detector',
     category: 'Projects',
-    title: 'Traffic Sign Detection System',
-    period: '',
+    title: 'Road Sign Detector: YOLOv8 Transfer Learning Study',
+    period: '2025',
     description:
-      'Trained YOLOv8n on the GTSDB dataset (43 classes), improving recall by 31.3% via a custom photometric augmentation pipeline. Built a preprocessing pipeline converting PPM annotations to YOLO format across 852 ground-truth entries.',
-    tags: ['Python', 'YOLOv8', 'OpenCV', 'Roboflow', 'NumPy'],
+      'Trained and compared two YOLOv8s models on a stratified 7,500-image subset of GTSRB (43 classes) to study the impact of harsh-condition augmentation on detection robustness. Built a custom Albumentations pipeline simulating night driving, motion blur, fog, and compression artifacts, improving mAP resilience on a synthetically degraded test set versus an unaugmented baseline.',
+    tags: ['Python', 'YOLOv8', 'OpenCV', 'Albumentations', 'Google Colab'],
     link: 'https://github.com/AdarshChar/GTSDB-Roadsign-Classifier',
   },
 ]
 
 export const experience = {
-  role: 'DevOps Engineer (Intern)',
-  company: 'SkyIT (GBCS Group)',
+  role: 'DevOps Team Lead (Intern)',
+  company: 'SkyIT',
   companyUrl: 'https://skyit.services',
-  period: 'Dec 2025 - Apr 2026',
-  stack: 'Terraform, AWS (VPC, RDS, ECR), Kubernetes, Docker, OIDC, CI/CD',
+  period: 'Current',
+  stack: 'Terraform, AWS, OIDC, CI/CD',
   bullets: [
-    'Provisioned secure AWS infrastructure across three isolated environments (LokoMotive, Aukai, Orion) using Terraform IaC, designing custom VPC topologies with CIDR-level network segmentation.',
-    'Automated RDS deployments via reusable Terraform modules, authoring tfvars configurations and smoke-testing procedures that standardized provisioning, ensured high-availability storage, and reduced manual configuration errors.',
-    'Containerized frontend and backend services with Docker, building, tagging, and managing images through secure ECR pipelines for consistent deployments across all environments.',
-    'Built GitHub Actions CI/CD pipelines to automate build, test, and release stages, reducing manual intervention and ensuring stable, repeatable releases across all environments.',
-    'Orchestrated containerized workloads on Kubernetes across development and production, deploying via Docker images and ECR pipelines while managing pod scheduling, autoscaling, and service networking for reliable releases.',
+    'Led the deployment of secure, scalable AWS infrastructure for enterprise applications. Directed Infrastructure as Code (IaC) initiatives using Terraform to automate provisioning, optimize RDS architectures, and enforce strict network isolation via custom VPC configurations across all environments.',
+    'Architected secure cloud networks: designed and implemented isolated Virtual Private Cloud (VPC) topologies utilizing custom CIDR blocks for the LokoMotive, Aukai, and Orion environments, ensuring robust network security and strict traffic segmentation.',
+    'Automated database provisioning: configured and deployed highly resilient Relational Database Service (RDS) modules via Terraform, streamlining backend data management and establishing high-availability storage for mission-critical applications.',
+    'Streamlined infrastructure deployment: authored comprehensive deployment documentation, Terraform variable (tfvars) configurations, and smoke testing procedures, significantly reducing manual configuration errors and accelerating new project onboarding.',
+    'Cross-functional collaboration: partnered with engineering leads and deployment teams to coordinate seamless application migrations, orchestrate task scheduling, and manage secure container registries utilizing AWS ECR.',
+    'Team leadership and orchestration: acted as DevOps Team Lead, coordinating with project leads and engineering teams to streamline application migrations and automate infrastructure workflows.',
+    'Containerized full-stack applications: Dockerized frontend and backend repositories, built and tagged container images, and pushed them to AWS Elastic Container Registry (ECR) to enable consistent, repeatable deployments across environments.',
+    'CI/CD pipeline integration: worked within existing CI/CD pipeline frameworks to automate build, test, and deployment stages, reducing manual intervention and ensuring stable, repeatable release processes across development and production environments.',
   ],
 }
 
@@ -105,28 +108,20 @@ export const education = {
 
 export const technicalSkills = [
   {
-    category: 'Languages',
-    items: ['Python', 'JavaScript (ES6+)', 'TypeScript', 'C/C++', 'SQL', 'Bash', 'HTML/CSS'],
+    category: 'Computer Languages',
+    items: ['C/C++', 'JavaScript (ES6, ES5)', 'TypeScript', 'Python', 'Bash', 'SQL', 'HTML/CSS', 'Scala'],
   },
   {
-    category: 'Frameworks & Libraries',
-    items: ['React', 'Node.js', 'Express.js', 'boto3'],
+    category: 'Protocols & APIs',
+    items: ['XML', 'JSON', 'Node.js', 'Express.js', 'REST API', 'HTTP/HTTPS'],
   },
   {
-    category: 'Cloud & DevOps',
-    items: ['AWS', 'Terraform', 'Kubernetes', 'Docker', 'ECR', 'CI/CD', 'OIDC'],
+    category: 'Databases',
+    items: ['MySQL', 'PostgreSQL', 'Microsoft SQL', 'Oracle'],
   },
   {
-    category: 'Security & Compliance',
-    items: ['IAM Least Privilege', 'AWS Config', 'Access Analyzer', 'Checkov', 'Static Analysis'],
-  },
-  {
-    category: 'AI & Data',
-    items: ['YOLOv8', 'OpenCV', 'Roboflow', 'NumPy'],
-  },
-  {
-    category: 'Databases & Tools',
-    items: ['PostgreSQL', 'MySQL', 'Microsoft SQL Server', 'Oracle', 'Git', 'Vim', 'Jest', 'JUnit'],
+    category: 'Tools',
+    items: ['Git', 'Vim', 'Docker', 'xUnit', 'Jest', 'JUnit'],
   },
 ]
 
